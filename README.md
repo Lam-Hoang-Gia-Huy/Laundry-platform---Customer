@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Laundry Middle Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Laundry Middle Platform is a comprehensive system designed to streamline and manage laundry services. It involves four main actors: administrators, stores, customers, and delivery staff.
 
-## Available Scripts
+## Actors and Roles
 
-In the project directory, you can run:
+### 1. Admin
 
-### `npm start`
+- **Management and Oversight:** Administrators have the highest level of access and control over the platform.
+- **User Management:** Admins can manage user accounts, including store owners and customers.
+- **Cloth Category Management:** Allows the admin to manage the categories such as material and cloth type that are used to customize the service.
+- **Time Category Management:** Allows the admin to mangage the laundry time categories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Store
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Service Management:** Stores, typically laundry service providers, use the platform to manage their laundry services.
+- **Order Processing:** They receive and process laundry orders placed by customers through the platform.
+- **Pricing and Offers:** Setting prices and promotions for their laundry services.
 
-### `npm test`
+### 3. Customer
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Filter Laundry Store:** Allows the customer to filter stores list based on their service’s category
+- **Order Placement:** Customers use the platform to place laundry orders, specifying details like the type of service, pickup/delivery times, etc.
+- **Payment:** They make payments through the platform, either online or upon delivery.
+- **Feedback and Reviews:** Customers can provide feedback and reviews based on their experience with the laundry service.
+- **Account Management:** Managing their personal information and order history.
 
-### `npm run build`
+### 4. Staff Simulator (Delivery Man)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Order Fulfillment:** Delivery staff receive notifications for order pickups and deliveries.
+- **Status Updates:** Providing real-time updates on order status, including pickup, processing, and delivery.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Key Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Order Tracking:** Allows customers, staffs and store owners to track the status of laundry orders in real-time.
+- **Payment Integration:** Secure online payment options for customers, and possibly payment tracking for stores.
+- **Feedback System:** Ratings and reviews for stores to maintain service quality.
+- **Store Dashboard:** A centralized dashboard for administrators to manage orders, monitor analytics, and maintain the store.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This Laundry Middle Platform aims to optimize the laundry service workflow, enhance customer satisfaction, and provide efficient management tools for store owners and administrators.
