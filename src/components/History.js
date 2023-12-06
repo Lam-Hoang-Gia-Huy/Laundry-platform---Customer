@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "antd";
 import axios from "axios";
-// import { config } from "../axios/auth-header";
 import { Link } from "react-router-dom";
 import { BiEdit } from "react-icons/bi";
 import { useSelector } from "react-redux";
@@ -100,21 +99,16 @@ const HistoryOrders = () => {
   };
 
   useEffect(() => {
-    // Call the function once when the component mounts
     getHistoryOrders(userInfoDTO.id);
-
     const interval = setInterval(() => {
       getHistoryOrders(userInfoDTO.id);
-    }, 2000); // Changed to 2 seconds as per your requirement
-
-    // Clear the interval when the component is unmounted
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
   const data1 = [];
 
   for (let i = 0; i < state.length; i++) {
-    // Format the total value as needed
     let formattedTotal =
       new Intl.NumberFormat("en-US").format(state[i].total) + "USD";
 
@@ -128,7 +122,7 @@ const HistoryOrders = () => {
         </Tag>
       ),
       total: state[i].total,
-      formattedTotal: formattedTotal, // Add the formatted total value
+      formattedTotal: formattedTotal,
 
       action: (
         <>

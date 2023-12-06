@@ -4,18 +4,16 @@ import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 import Dropdown from "react-bootstrap/Dropdown";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getTotals } from "../action/features/cart/cartSlice";
 import { logout } from "../action/features/auth/authSlice";
-
 
 const Nav = () => {
   const { userInfoDTO } = useSelector((state) => state.auth);
   const [menuIcon, setMenuIcon] = useState();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-
 
   useEffect(() => {
     dispatch(getTotals());
@@ -63,13 +61,12 @@ const Nav = () => {
 
     .cart-trolley--link {
       position: relative;
-      
 
       .cart-trolley {
         position: relative;
         font-size: 5.2rem;
-        height:38px;
-        width:38px;
+        height: 38px;
+        width: 38px;
       }
 
       .cart-total--item {
@@ -161,15 +158,14 @@ const Nav = () => {
 
         .cart-trolley {
           font-size: 5.2rem;
-          height:20px;
-          width:20px;
+          height: 20px;
+          width: 20px;
         }
 
         .cart-total--item {
           width: 3rem;
           height: 3rem;
           font-size: 2rem;
-
         }
       }
 
@@ -185,58 +181,69 @@ const Nav = () => {
     <Nav>
       <div className={menuIcon ? "navbar active" : "navbar"}>
         <div className="navbar-lists">
-          <div style={{ color: 'white', fontSize: '35px' }}>
+          <div style={{ color: "white", fontSize: "35px" }}>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
-              <span className="cart-total--item"> {cart.cartTotalQuantity} </span>
+              <span className="cart-total--item">
+                {" "}
+                {cart.cartTotalQuantity}{" "}
+              </span>
             </NavLink>
           </div>
-          
-          <div style={{ color: 'white', fontSize: '25px', width: '' }}>
 
-
-            <li style={{ color: 'white' }}>
-
-              {userInfoDTO === null ? (<Dropdown>
-                <Dropdown.Toggle variant="" id="dropdown-basic" style={{ fontSize: '22px' }}>
-
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu style={{ width: '200px', height: 'auto', fontSize: '18px' }}>
-                  <Dropdown.Item href="/USER">SignUp</Dropdown.Item>
-
-                  <Dropdown.Item href="/login">Login</Dropdown.Item>
-
-
-
-                </Dropdown.Menu>
-
-
-              </Dropdown>) : (<div className="d-flex gap-3 align-items-center dropdown">
-                {userInfoDTO.fullName}
+          <div style={{ color: "white", fontSize: "25px", width: "" }}>
+            <li style={{ color: "white" }}>
+              {userInfoDTO === null ? (
                 <Dropdown>
-                  <Dropdown.Toggle variant="" id="dropdown-basic" style={{ fontSize: '22px' }}>
+                  <Dropdown.Toggle
+                    variant=""
+                    id="dropdown-basic"
+                    style={{ fontSize: "22px" }}
+                  ></Dropdown.Toggle>
 
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu style={{ width: '200px', height: 'auto', fontSize: '18px' }}>
-
-                    <Dropdown.Item href="/profilelayout/profile">Profile</Dropdown.Item>
-                    <Dropdown.Item href="/profilelayout/history">Order History</Dropdown.Item>
-
-
-                    <Dropdown.Item href="/" onClick={() => dispatch(logout())} >Logout</Dropdown.Item>
-
-
+                  <Dropdown.Menu
+                    style={{ width: "200px", height: "auto", fontSize: "18px" }}
+                  >
+                    <Dropdown.Item href="/login">Login</Dropdown.Item>
                   </Dropdown.Menu>
-                </Dropdown></div>)}
+                </Dropdown>
+              ) : (
+                <div className="d-flex gap-3 align-items-center dropdown">
+                  {userInfoDTO.fullName}
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      variant=""
+                      id="dropdown-basic"
+                      style={{ fontSize: "22px" }}
+                    ></Dropdown.Toggle>
 
+                    <Dropdown.Menu
+                      style={{
+                        width: "200px",
+                        height: "auto",
+                        fontSize: "18px",
+                      }}
+                    >
+                      <Dropdown.Item href="/profilelayout/profile">
+                        Profile
+                      </Dropdown.Item>
+                      <Dropdown.Item href="/profilelayout/history">
+                        Order History
+                      </Dropdown.Item>
+
+                      <Dropdown.Item
+                        href="/"
+                        onClick={() => dispatch(logout())}
+                      >
+                        Logout
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+              )}
             </li>
-
           </div>
-
         </div>
-
 
         <div className="mobile-navbar-btn">
           <CgMenu

@@ -1,16 +1,9 @@
-//import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
 import { Input, Form, Button, Select, message } from "antd";
 import React, { useState, useEffect, useContext } from "react";
-
-import UploadImage from "./Form/UploadImage";
-import { config } from "../axios/auth-header";
-import FeedbackContext from "./context/FeedbackContext";
-
 const initialState = {
   id: "",
   email: "",
@@ -25,13 +18,8 @@ const initialState = {
 export default function ProfileDetailForm() {
   const [form] = Form.useForm();
   const { Option } = Select;
-  const user = useParams();
-  const [open, setOpen] = useState(false);
-  const putUserUrl = `https://magpie-aware-lark.ngrok-free.app/api/v1/user/profile/${user.id}`;
   const [state, setState] = useState(initialState);
-  const { id, fullName, email, phone, address, image, status, role } = state;
   const { userInfoDTO } = useSelector((state) => state.auth);
-  const getUsersUrl = `https://magpie-aware-lark.ngrok-free.app/api/v1/base/profile/2`;
 
   const [userProfile, setUserProfile] = useState(userInfoDTO);
   useEffect(() => {
@@ -52,28 +40,6 @@ export default function ProfileDetailForm() {
     },
     wrapperCol: {
       span: 16,
-    },
-  };
-
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="84">+84</Option>
-        <Option value="87">+87</Option>
-      </Select>
-    </Form.Item>
-  );
-  const validateMessages = {
-    required: "${label} đang trống, Vui lòng nhập thông tin ! ",
-    types: {
-      number: "${label} is not a valid number!",
-    },
-    number: {
-      range: "${label} must be between ${min} and ${max}",
     },
   };
 
@@ -115,9 +81,6 @@ export default function ProfileDetailForm() {
         <div className="card">
           <div className="card-body p-5">
             <div class="row">
-              {/* <div className="col-sm-2 p-5">
-                <UploadImage className="m-2"></UploadImage>
-              </div> */}
               <div className="col-sm-10">
                 <Form
                   form={form}

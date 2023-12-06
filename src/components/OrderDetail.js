@@ -76,14 +76,10 @@ export default function OrderDetails() {
   }, []);
 
   useEffect(() => {
-    // Call the function once when the component mounts
     fetchData();
-
     const interval = setInterval(() => {
       fetchData();
-    }, 1000); // Changed to 2 seconds as per your requirement
-
-    // Clear the interval when the component is unmounted
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
