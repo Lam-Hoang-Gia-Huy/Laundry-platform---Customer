@@ -1,6 +1,6 @@
-# Laundry Middle Platform
+# Laundry Platform
 
-The Laundry Middle Platform is a comprehensive system designed to streamline and manage laundry services. It involves four main actors: administrators, stores, customers, and delivery staff.
+The Laundry Platform is a comprehensive system designed to streamline and manage laundry services. It involves four main actors: administrators, stores, customers, and delivery staff.
 
 ## Actors and Roles
 
